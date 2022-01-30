@@ -1,6 +1,6 @@
 # Work Day Scheduler
 
-![scheduler screenshot](/develop/assets/images/scheduler-screenshot.jpg)
+![scheduler screenshot](/Develop/assets/images/scheduler-screenshot.jpg)
 
 ## Objectives
 - Create a daily scheduler that keeps track of tasks and dates
