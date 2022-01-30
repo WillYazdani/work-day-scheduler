@@ -46,7 +46,7 @@ $(".saveBtn").on("click", function(){
 
     console.log(time)
 
-    localStorage.setItem(task, time);
+    localStorage.setItem(time, task);
     
 });
 
