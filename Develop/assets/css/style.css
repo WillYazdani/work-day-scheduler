@@ -61,11 +61,14 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
   background-color: #06AED5;
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
   transition: all .3s ease-in-out;
+  background-color: #77dd77;
 }

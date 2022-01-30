@@ -5,10 +5,9 @@ $(document).ready(function(){
     $("#currentDay").text(currentTime);        
 });
 
-
 //checkTime and assign colors to hours
 var checkTime = function() {
-    for (var i = 9; i <= 17; i++) {
+    for (var i = 9; i < 18; i++) {
     
         var hour = $("[data-time="+i+"]")
         var time = moment().set("hour", i)
@@ -23,10 +22,40 @@ var checkTime = function() {
     }
 };
 
-//run checkTime on load
+//run checkTime on page load
 $(document).ready(checkTime);
 
 //run checkTime every 5 seconds
 setInterval(function() {
     checkTime();
 }, 5000);
+
+
+//send task to local storage
+$(".saveBtn").on("click", function(){
+
+    // get content from previous container
+    var task = $(this)
+    .prev()
+    .val();
+
+    console.log(task);
+
+    //get time-data
+    var time = $(this).siblings("div").data("time");
+
+    console.log(time)
+
+    localStorage.setItem(task, time);
+    
+});
+
+//task content placed in textarea
+var loadTasks = function() {
+    for (var i = 9; i < 18; i++) {
+        $("[data-time="+i+"]").siblings("textarea").val(localStorage.getItem(i))
+    };
+};
+
+//load task on page load
+$(document).ready(loadTasks);
